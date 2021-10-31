@@ -1,0 +1,32 @@
+.slider{
+    width: 100%;
+    height: 600px;
+}
+
+.btn{
+    color: #636e72;
+    font-weight: 600;
+    background-color: bisque;
+    border: 2px solid black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.btn:hover{
+    background-color: black;
+    color: salmon;
+    border-radius: 10px;
+    transition: 0.5s;
+    background-color: aquamarine;
+    border: 2px solid rgb(128, 128, 128);
+}
+.slider-text h2{
+    color: yellow;
+    font-size: 50px;
+}
+
+@media (max-width:700px) {
+    .slider{
+        height: 400px;
+        margin-top: 10px;
+    }
+}

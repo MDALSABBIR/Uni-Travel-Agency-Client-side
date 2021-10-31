@@ -1,0 +1,44 @@
+.content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    background-color: #ECEEED;
+    padding: 20px;
+    margin-top: 20px;
+}
+.team-heading{
+    font-size: 60px;
+    font-weight: 300;
+}
+.team-title{
+    font-size: 60px;
+    color: #4B5664;
+    font-weight: 700;
+}
+.flag{
+    width: 300px;
+}
+.drimg{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+@media (max-width:700px) {
+    .content{
+        display: block;
+    }
+    .team-heading{
+        font-size: 40px;
+    }
+    .team-title{
+        font-size: 40px;
+    }
+    .drimg{
+        display: none;
+    }
+    .flag{
+        width: 200px;
+    }
+}

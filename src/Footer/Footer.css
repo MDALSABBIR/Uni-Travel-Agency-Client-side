@@ -1,0 +1,31 @@
+.footer{
+    color: #A18C5F;
+    background-color: #2F2F2F;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin-top: 20px;
+    padding: 20px;
+    list-style: none;
+}
+.social-icon{
+    color: bisque;
+    font-size: 50px;
+    margin: 10px;
+    cursor: pointer;
+}
+.social-icon:hover{
+    color: lightseagreen;
+}
+
+@media (max-width:700px) {
+    .footer{
+        display: block;
+    }
+    .foot{
+        margin: 20px;
+    }
+    .social-icon{
+        font-size: 30px;
+    }
+}

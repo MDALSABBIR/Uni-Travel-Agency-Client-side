@@ -1,0 +1,17 @@
+.about-title{
+    padding: 20px;
+    color: #636e72;
+    font-size: 50px;
+    font-weight: 600;
+}
+.value-title{
+    font-weight: 700;
+    color: #636e72;
+}
+
+@media (max-width:700px) {
+    .about-title{
+        font-size: 45px;
+        margin-top: 10px;
+    }
+}
