@@ -9,14 +9,14 @@ import './ServicesDetails.css';
 
 const ServicesDetails = () => {
     const { user } = useAuth();
-    const { eventsData } = useParams();
+    const { eventsDeta } = useParams();
     const [data, setData] = useState([]);
     useEffect(() => {
         fetch("https://uni-travel-34404.herokuapp.com/events")
             .then((res) => res.json())
             .then((data) => setData(data));
     }, []);
-    const ExactIteam = data.filter((oneData) => oneData.key == eventsData);
+    const ExactIteam = data.filter((oneData) => oneData.id == eventsDeta);
 
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = (data) => {
@@ -32,7 +32,7 @@ const ServicesDetails = () => {
             .post("https://uni-travel-34404.herokuapp.com/users", data)
             .then((res) => {
                 if (res.data.insertedId) {
-                    alert("Registration Succefull");
+                    alert("Booking Succefull");
                     reset();
                 }
             });
@@ -44,16 +44,12 @@ const ServicesDetails = () => {
                 <Row>
                     <Col className="my-5" md={8}>
                         <img className="details-img my-3" src={ExactIteam[0]?.img} alt="" />
-                        <h3>{ExactIteam[0]?.title}</h3>
-                        <p>Description: {ExactIteam[0]?.description}</p>
-                        <br />
-                        <h5>Travel Style: {ExactIteam[0]?.travel_style}</h5>
-                        <br />
+                        <h2>{ExactIteam[0]?.title}</h2>
+                        <h4>Travel Style: {ExactIteam[0]?.travel_style}</h4>
                         <h6>Service Level: {ExactIteam[0]?.service_level}</h6>
-                        <br />
                         <h6>Trip Type: {ExactIteam[0]?.trip_type}</h6>
-                        <br />
-                        <h3> Price: $ {ExactIteam[0]?.price}</h3>
+                        <p>Description: {ExactIteam[0]?.description}</p>
+                        <h3> Fee: $ {ExactIteam[0]?.price}</h3>
                     </Col>
                     <Col md={4} className="mt-5">
                         <div className="add-reg-form">
@@ -69,11 +65,11 @@ const ServicesDetails = () => {
                             </p>
                             <form className="form" onSubmit={handleSubmit(onSubmit)}>
                                 <input
-                                    placeholder="Input Name"
+                                    placeholder="Your Name"
                                     {...register("name", { required: true })}
                                 />
                                 <input
-                                    placeholder="Input Address"
+                                    placeholder="Your Address"
                                     {...register("address", { required: true })}
                                 />
                                 <input
@@ -82,13 +78,13 @@ const ServicesDetails = () => {
                                     {...register("age", { required: true, min: 18, max: 60 })}
                                 />
                                 <input
-                                    placeholder="Input Phone Number"
+                                    placeholder="Your Phone Number"
                                     type="number"
                                     {...register("phone", { required: true })}
                                 />
                                 <input
                                     className="btn btn-warning"
-                                    value="Place Order"
+                                    value="Booking Now"
                                     type="submit"
                                 />
                             </form>

@@ -86,12 +86,12 @@ const MyOrders = () => {
                 <div className="btn-all-table">
                   <button
                     onClick={() => handleUpdate(order._id)}
-                    className="btn-action"
+                    className="btn-action mx-3 btn"
                   >
                     Approved
                   </button>
 
-                  <button onClick={() => handleDeelete(order._id)}>X</button>
+                  <button className="mx-3 btn" onClick={() => handleDeelete(order._id)}>Delete</button>
                 </div>
               </td>
             </tr>

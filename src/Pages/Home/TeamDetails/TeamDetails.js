@@ -30,12 +30,12 @@ const TeamDetails = () => {
                     <img className="flag" src="https://images.unsplash.com/photo-1518563077661-23ad56581d77?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTc3fHx0cmF2ZWxsaW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" />
                 </div>
                 <div>
-                    <img className="drimg" src="https://images.unsplash.com/photo-1532364158125-02d75a0f7fb9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTh8fHBsYW5lfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" />
+                    <img className="about-img" src="https://images.unsplash.com/photo-1532364158125-02d75a0f7fb9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTh8fHBsYW5lfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" />
                 </div>
 
             </div>
             <Button onClick={handleAbout} className="btn" variant="secondary" size="lg" active>
-                Team Details
+                Learn More
             </Button>
         </div>
 

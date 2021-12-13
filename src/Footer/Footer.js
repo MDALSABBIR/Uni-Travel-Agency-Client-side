@@ -11,7 +11,7 @@ const Footer = () => {
                 <br />
                 <span><i class="fas fa-phone-alt"></i>+1 420-240-6000</span>
                 <br />
-                <span><i class="fas fa-envelope"></i>mahedihasan@gmail.com</span>
+                <span><i class="fas fa-envelope"></i>  alsabbir1066@gmail.com</span>
             </div>
             <div className="foot">
                 <h2>About Us</h2>

@@ -18,11 +18,22 @@
     color: yellow;
 }
 @media (max-width:750px) {
+    .banner{
+        display: block;
+        width: auto;
+        height: auto;
+        padding: 5px;
+    }
     .banner h2{
         font-size: 30px;
         font-weight: 600;
     }
-    .banner{
-        display: block;
+    .banner h4{
+        font-weight: 400;
+        font-size: small;
+        line-height: 1.5;
+    }
+    .top-heading{
+        font-size: 30px;
     }
 }

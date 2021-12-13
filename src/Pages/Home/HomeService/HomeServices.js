@@ -17,9 +17,9 @@ const HomeService = (props) => {
             </div>
             <div className="service-container">
                 {
-                    services?.slice(0, 6)?.map(service => <Service
-                        key={service.id}
-                        service={service}
+                    services?.slice(0, 6)?.map(events => <Service
+                        key={events.id}
+                        events={events}
                     ></Service>)
                 }
             </div>

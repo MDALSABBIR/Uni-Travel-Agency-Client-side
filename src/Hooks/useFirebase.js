@@ -3,23 +3,25 @@ import { useEffect, useState } from "react";
 import initializeAuthentication from "../Login/Firebase/firebase.init";
 
 initializeAuthentication();
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
 
     const auth = getAuth();
+    
+
 
     const signInUsingGoogle = () => {
         setIsLoading(true);
-        const googleProvider = new GoogleAuthProvider();
         return signInWithPopup(auth, googleProvider)
             .finally(() => setIsLoading(false));
     }
 
     const signInUsingGithub = () => {
         setIsLoading(true);
-        const githubProvider = new GithubAuthProvider();
         return signInWithPopup(auth, githubProvider)
             .finally(() => setIsLoading(false));
     }

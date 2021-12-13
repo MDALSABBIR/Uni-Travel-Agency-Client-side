@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, updateProfile } from '@firebase/auth';
+import { createUserWithEmailAndPassword, getAuth,sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, updateProfile } from '@firebase/auth';
 import React, { useState } from 'react';
 import {useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../Hooks/useAuth';
@@ -7,8 +7,7 @@ import initializeAuthentication from './Firebase/firebase.init';
 
 
 initializeAuthentication();
-const googleProvider = new GoogleAuthProvider();
-const githubProvider = new GithubAuthProvider();
+
 
 const Register = () => {
     const [name, setName] = useState('');
@@ -19,26 +18,26 @@ const Register = () => {
 
     const location = useLocation();
     const history = useHistory();
-    const redirect_uri = location.state?.form || "/home";
+    const redirect_uri = location.state?.from || "/";
 
     const auth = getAuth();
     const { signInUsingGithub } = useAuth();
-
+    const { signInUsingGoogle } = useAuth();
 
     const handleGoogleSignIn = () => {
-        signInWithPopup(auth, googleProvider)
+        signInUsingGoogle()
             .then(result => {
-                const user = result.user;
-                console.log(user);
+                // const user = result.user;
+                // console.log(user);
                 history.push(redirect_uri)
             })
     }
 
     const handleGithubSignIn = () => {
-        signInUsingGithub(auth, githubProvider)
+        signInUsingGithub()
             .then(result => {
-                const user = result.user;
-                console.log(user);
+                // const user = result.user;
+                // console.log(user);
                 history.push(redirect_uri)
             })
     }
@@ -56,7 +55,7 @@ const Register = () => {
 
     const handleRegistration = e => {
         e.preventDefault();
-        console.log(email, password);
+        // console.log(email, password);
         if (password.length < 6) {
             setError('Password must be at least 6 character long')
             return;

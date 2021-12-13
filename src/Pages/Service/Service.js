@@ -4,12 +4,12 @@ import { useHistory } from 'react-router';
 import './Service.css'
 
 
-const Service = ({ service }) => {
+const Service = ({ events }) => {
     let history2 = useHistory();
     const handleService = () => {
-        history2.push(`/service/Details/${service._id}`)
+        history2.push(`/servicesDetails/${events.id}`)
     }
-    const { title, travel_style, service_level, trip_type, description, img, price, } = service;
+    const { title, travel_style, service_level, trip_type, description, img, price, } = events;
 
 
 

@@ -10,7 +10,7 @@ const AllOrders = () => {
 
   const handleUpdate = (id) => {
     const updateStatus = { status: "Approved" };
-    const url = `https://uni-travel-34404.herokuapp.com//users/${id}`;
+    const url = `https://uni-travel-34404.herokuapp.com/users/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -23,7 +23,7 @@ const AllOrders = () => {
         console.log(data);
         if (data.modifiedCount) {
           alert("Update Succeflly");
-          fetch(`https://uni-travel-34404.herokuapp.com//users/`)
+          fetch(`https://uni-travel-34404.herokuapp.com/users/`)
             .then((res) => res.json())
             .then((data) => {
               setOrders(data);
@@ -36,7 +36,7 @@ const AllOrders = () => {
   //   This is For Delete
 
   const handleDelete = (id) => {
-    const url = `https://uni-travel-34404.herokuapp.com//users/${id}`;
+    const url = `https://uni-travel-34404.herokuapp.com/users/${id}`;
     fetch(url, {
       method: "DELETE",
     })
@@ -52,7 +52,7 @@ const AllOrders = () => {
   };
 
   useEffect(() => {
-    fetch(`https://uni-travel-34404.herokuapp.com//users`)
+    fetch(`https://uni-travel-34404.herokuapp.com/users`)
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
@@ -61,7 +61,7 @@ const AllOrders = () => {
   }, []);
   return (
     <div>
-      <h2>AllOrders</h2>
+      <h2>Manage All Orders</h2>
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -82,12 +82,12 @@ const AllOrders = () => {
                 <div className="btn-all-table">
                   <button
                     onClick={() => handleUpdate(order._id)}
-                    className="btn-action"
+                    className="btn-action mx-3 btn"
                   >
                     Approved
                   </button>
 
-                  <button onClick={() => handleDelete(order._id)}>X</button>
+                  <button className="mx-3 btn" onClick={() => handleDelete(order._id)}>Delete</button>
                 </div>
               </td>
             </tr>
